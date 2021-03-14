@@ -2,6 +2,9 @@ const startButton = document.getElementById('start-btn')
 const nextButton = document.getElementById('next-btn')
 const questionContainerElement = document.getElementById
 ('question-container')
+const enternContainerElement = document.getElementById
+('myText')
+const addbContainerElement = document.getElementById('add-btn')
 
 const questionElement = document.getElementById('question')
 const answerButtonsElement = document.getElementById('answer-buttons')
@@ -58,6 +61,10 @@ function startGame() {
     questionContainerElement.classList.remove('hide')
     setNextQuestion()
     countRightAnswers = 0; 
+    enternContainerElement.classList.remove('hide')
+    addbContainerElement.classList.remove('hide')
+    // nextButton.classList.remove('hide')
+
 
     
     
@@ -144,6 +151,17 @@ function clearStatusClass(element) {
     element.classList.remove('correct')
     element.classList.remove('wrong')
 }
+
+//----enter name
+function myFunction() {
+    var x = document.getElementById("myText").value;
+    document.getElementById("demo").innerHTML = x;
+  }
+
+
+
+
+
 //questions
 const questions = [
     {
