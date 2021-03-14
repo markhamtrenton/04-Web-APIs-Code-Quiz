@@ -3,7 +3,7 @@
 
 Screen Shots Above
 
-In this weeks HW we had to creat a password generator using javascript that was able to generate a password with certain criterias such as legth and types of charaters.
+In this weeks HW we had to create a code quiz application with a timer and highcore with log at the end.
 
 Github deploy link: https://markhamtrenton.github.io/04-Web-APIs-Code-Quiz/  Github repo link: https://github.com/markhamtrenton/04-Web-APIs-Code-Quiz
 

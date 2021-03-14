@@ -9,6 +9,10 @@ const answerButtonsElement = document.getElementById('answer-buttons')
 
 let shuffledQuestions, currentQuestionIndex;
 
+//----------------
+let countRightAnswers = 0;
+//----------------------
+
 startButton.addEventListener('click', startGame)
 
 nextButton.addEventListener('click', ()=> {
@@ -18,7 +22,7 @@ nextButton.addEventListener('click', ()=> {
 
 
 
-
+//time clock below-------------
 
 function timer001() {
     c = c-1;
@@ -53,6 +57,7 @@ function startGame() {
     currentQuestionIndex = 0
     questionContainerElement.classList.remove('hide')
     setNextQuestion()
+    countRightAnswers = 0; 
 
     
     
@@ -65,6 +70,8 @@ function setNextQuestion() {
 
 }
 
+
+//making question appear
 function showQuestion(question) {
     questionElement.innerText = question.question
     question.answers.forEach(answer => {
@@ -107,6 +114,13 @@ function selectAnswer(e) {
                 startButton.innerText = 'Restart'
                 startButton.classList.remove('hide')
             }
+            //----------
+            if (selectedButton.dataset = correct) {
+                countRightAnswers++;
+             //
+             }
+             //--------------
+             document.getElementById('right-answers').innerHTML = countRightAnswers; 
         }
     
 
