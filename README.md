@@ -1,10 +1,13 @@
 ![quizapp1](https://user-images.githubusercontent.com/77074964/111056609-5b5bf200-844e-11eb-9e29-d0f08c290778.jpg)
 ![quizzapp2](https://user-images.githubusercontent.com/77074964/111056612-6151d300-844e-11eb-8db6-c2f9d3cf493d.jpg)
+
+Screen Shots Above
+
 In this weeks HW we had to creat a password generator using javascript that was able to generate a password with certain criterias such as legth and types of charaters.
 
-Github deploy link:  Github repo link: 
+Github deploy link: https://markhamtrenton.github.io/04-Web-APIs-Code-Quiz/  Github repo link: https://github.com/markhamtrenton/04-Web-APIs-Code-Quiz
 
-Screen Shots Below
+
 
 
 
