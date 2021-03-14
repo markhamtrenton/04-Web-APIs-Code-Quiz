@@ -6,14 +6,35 @@ const questionContainerElement = document.getElementById
 const questionElement = document.getElementById('question')
 const answerButtonsElement = document.getElementById('answer-buttons')
 
-let shuffledQuestions, currentQuestionIndex
+
+let shuffledQuestions, currentQuestionIndex;
 
 startButton.addEventListener('click', startGame)
+
 nextButton.addEventListener('click', ()=> {
     currentQuestionIndex++
     setNextQuestion()
 })
 
+
+
+
+
+function timer001() {
+    c = c-1;
+    if (c <20) {
+        time001.innerHTML = c;
+    }
+    if (c < 1) {
+        window.clearInterval(update);
+    }
+}
+
+update = setInterval("timer001()", 1000)
+
+
+
+//test
 
 
 
@@ -24,12 +45,17 @@ nextButton.addEventListener('click', ()=> {
 
 //starting game below----
 function startGame() {
+    c = 20;
     console.log('Started')
+   
     startButton.classList.add('hide')
     shuffledQuestions = questions.sort(() => Math.random() - .5)
     currentQuestionIndex = 0
     questionContainerElement.classList.remove('hide')
     setNextQuestion()
+
+    
+    
 }
 
 //next question below------
@@ -58,6 +84,7 @@ function showQuestion(question) {
 
 
 function resetState() {
+    clearStatusClass(document.body)
     nextButton.classList.add('hide')
     while (answerButtonsElement.firstChild) {
         answerButtonsElement.removeChild
@@ -73,9 +100,22 @@ function selectAnswer(e) {
     Array.from(answerButtonElement.children).forEach(button => {
         setStatusClass(button, button.dataset.correct)
     })
+    if (shuffledQuestions.legnth > currentQuestionIndex + 1) {
+        nextButton.classList.remove('hide') 
+         } else {
+           
+                startButton.innerText = 'Restart'
+                startButton.classList.remove('hide')
+            }
+        }
+    
+
+  
    //next btn below-------
    nextButton.classList.remove('hide')
-}
+    
+
+
 
 function setStatusClass(element, correct) {
     clearStatusClass(element)
@@ -90,13 +130,46 @@ function clearStatusClass(element) {
     element.classList.remove('correct')
     element.classList.remove('wrong')
 }
-
+//questions
 const questions = [
     {
-        question: 'What is 2 + 2',
+        question: 'What does html stand for?',
         answers: [
-            { text: '4', correct: true },
-            {text: '22', correct: false }
+            { text: 'Hyper Text Markup Language', correct: true },
+            {text: 'Home Tool Markup Language', correct: false },
+            {text: 'Hyperlinks and Text Markup Language', correct: false}
         ]
-    }
+    },
+    {
+        question: 'Choose the correct HTML element for the largest heading:',
+        answers: [
+            {text: '<h6>', correct: false},
+            {text: '<head>', correct: false},
+            {text: '<h1>', correct: true}
+        ]
+    },
+    {
+        question: 'Choose the correct HTML element to define important text',
+        answers: [
+            {text: '<important>', correct: false},
+            {text: '<i>', correct: false},
+            {text: '<strong>', correct: true}
+        ]
+    },
+    {
+        question: 'How can you make a bulleted list?',
+        answers: [
+            {text: '<ul>', correct: true},
+            {text: '<dl>', correct: false},
+            {text: '<strong>', correct: false}
+        ]
+    },
+    {
+        question: 'Which HTML element defines the title of a document?',
+        answers: [
+            {text: '<title>', correct: true},
+            {text: '<dl>', correct: false},
+            {text: '<head>', correct: false}
+        ]
+    },
 ]
