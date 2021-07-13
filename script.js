@@ -24,26 +24,32 @@ nextButton.addEventListener('click', ()=> {
 })
 
 
-
-//time clock below-------------
-
-function timer001() {
-    c = c-1;
-    if (c <20) {
-        time001.innerHTML = c;
-    }
-    if (c < 1) {
-        window.clearInterval(update);
-    }
-}
-
-update = setInterval("timer001()", 1000)
-
-
+window.onload = function() { 
+    document.getElementById('next-btn').style.display = 'none';
+    document.getElementById('add-btn').style.display = 'none';
+  };
+//   window.onload = function() {
+//     $("#b-navbar-fg").hide();
+//   };
 
 //test
 
+function timerCountdown(duration, display) {
+    var timer = duration, minutes, seconds;
+    setInterval(function () {
+        minutes = parseInt(timer / 60, 10);
+        seconds = parseInt(timer % 60, 10);
 
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        display.textContent = minutes + ":" + seconds;
+
+        if (--timer < 0) {
+            timer = duration;
+        }
+    }, 1000);
+}
 
 
 
@@ -52,7 +58,15 @@ update = setInterval("timer001()", 1000)
 
 //starting game below----
 function startGame() {
-    c = 20;
+
+    var tenMinutes = 60 * 10,
+        display = document.querySelector('#timer');
+    timerCountdown(tenMinutes, display);
+//-----------------------------------
+
+document.getElementById('next-btn').style.display = 'block';
+
+    
     console.log('Started')
    
     startButton.classList.add('hide')
@@ -111,24 +125,29 @@ function selectAnswer(e) {
     const selectedButton = e.target
     const correct = selectedButton.dataset.correct
     setStatusClass(document.body, correct)
-    Array.from(answerButtonElement.children).forEach(button => {
+    Array.from(answerButtonsElement.children).forEach(button => {
         setStatusClass(button, button.dataset.correct)
     })
-    if (shuffledQuestions.legnth > currentQuestionIndex + 1) {
+    if (shuffledQuestions.length > currentQuestionIndex + 1) {
+        if (document.getElementById('add-btn').style.display === 'block') {
+            document.getElementById('add-btn').style.display = 'none'
+        }
         nextButton.classList.remove('hide') 
          } else {
-           
+            document.getElementById('add-btn').style.display = 'block';
+            document.getElementById('next-btn').style.display = 'none';
                 startButton.innerText = 'Restart'
                 startButton.classList.remove('hide')
             }
             //----------
-            if (selectedButton.dataset = correct) {
+            
+    if (selectedButton.classList.value.includes("correct")) {
                 countRightAnswers++;
              //
-             }
+    }
              //--------------
-             document.getElementById('right-answers').innerHTML = countRightAnswers; 
-        }
+    document.getElementById('right-answers').innerHTML = countRightAnswers; 
+}
     
 
   
@@ -152,7 +171,7 @@ function clearStatusClass(element) {
     element.classList.remove('wrong')
 }
 
-//----enter name
+//----enter name function
 function myFunction() {
     var x = document.getElementById("myText").value;
     document.getElementById("demo").innerHTML = x;

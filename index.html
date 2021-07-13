@@ -9,12 +9,13 @@
 </head>
 
 <body>
-    <h1>Code-Quiz.</h1>
+    
     <div class="container">
+        <h2 id="cdquiz">Code-Quiz</h2>
      
         <div id="question-container" class="hide">
-            <h2>Code-Quiz</h2>
-            <span id="right-answers"></span>
+            
+            <!-- <span id="right-answers"></span> -->
             
             <div id="question">Question</div>
             <div id="answer-buttons" class="btn-grid">
@@ -24,19 +25,23 @@
                 <button class="btn">answer 4</button>
             </div>
         </div>
+        
             <div class="controls">
                 <button id="start-btn" class="start-btn btn">Start</button>
                 <button class="next-btn btn unhide" id="next-btn">Next</button>
             </div>
             
+            <text>Time:<text id="timer">10:00</text>
 
-            <input class="hide" type="text" id="myText" value="Entername">
             
-            <button id="add-btn" class="hide" onclick="myFunction()">Add</button>
+            <button id="add-btn" class="hide" onclick="myFunction()"><input class="unhide" type="text" id="myText" value="Entername">Add</button>
             
             <p id="demo"></p>
-               
-            <text>Time:<text id="time001">20</text>
+
+           <div>Score <div id="right-answers"></div>out of 5</div>
+        </div>
+        
+            
         </div>
         
     

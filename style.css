@@ -17,7 +17,10 @@ body {
     height: 100vh;
     justify-content: center;    
     align-items: center;   
-    background-color: hsl(var(--hue), 100%, 20%);
+    /* background-color: hsl(var(--hue), 100%, 20%); */
+     /* background-color: rebeccapurple;  */
+     background-image: url("gif-background-free.gif"); 
+    background-size: cover; 
 
 }
 
@@ -34,9 +37,11 @@ body.wrong {
     --hue: var(--hue-wrong);
 }
 .container {
-    width: 800px;
+    width: 900px;
+    /* height: 500px; */
     max-width: 80%;
-    background-color: white;
+    /* background-color: white; */
+    background-color: hsl(var(--hue), 100%, 20%);
     border-radius: 5px; 
     padding: 10px;
     box-shadow: 0 0 10px 2px;
@@ -92,3 +97,11 @@ body.wrong {
 .unhide {
     display: block;
 }
+
+#cdquiz { 
+    text-align: center;
+    align-items: center;
+    color: darkgray;
+    
+}
+
