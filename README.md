@@ -1,5 +1,5 @@
-![quizapp1](https://user-images.githubusercontent.com/77074964/111056609-5b5bf200-844e-11eb-9e29-d0f08c290778.jpg)
-![quizzapp2](https://user-images.githubusercontent.com/77074964/111056612-6151d300-844e-11eb-8db6-c2f9d3cf493d.jpg)
+![codequiz](https://user-images.githubusercontent.com/77074964/125869355-4e462582-7c74-43d7-a9ed-937a102f31b6.jpg)
+
 
 Screen Shots Above
 
